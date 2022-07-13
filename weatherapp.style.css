@@ -56,11 +56,38 @@ h6 {
   text-align: center;
   padding-top: 50px;
 }
-.emojis,
-.temps {
-  font-size: 25px;
+
+ul.emojis li {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  font-size: 30px;
 }
+
+ul.emojis {
+  width: 100%;
+  list-style: none;
+}
+
+ul.temps li {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  font-size: 30px;
+}
+
+ul.temps {
+  width: 100%;
+  list-style: none;
+}
+
+li {
+  text-align: center;
+  width: 10%;
+}
+
 .bits {
+  padding-left: 0px;
   font-size: 25px;
   color: #5b5454;
 }

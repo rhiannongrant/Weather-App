@@ -103,7 +103,7 @@ function selectCity(event) {
   let apiKey = "5d6ccea11b20e8de9615fa5ff7430272";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-  https: axios.get(url).then(showWeather);
+  axios.get(url).then(showWeather);
   console.log(Response);
 }
 
