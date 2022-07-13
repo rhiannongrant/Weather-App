@@ -11,6 +11,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="weatherapp.style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@500&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <title>Weather App</title>
@@ -24,21 +30,23 @@
         autofocus="on"
         id="search-result"
       />
-      <button type="submit" id="searchButton">Search</button>
+      <button type="submit" id="searchButton">
+        <spam class="search">Search</spam> city
+      </button>
+      <button type="submit" id="currentLocation">
+        <spam class="usecurrent">Use Current</spam> Location
+      </button>
     </form>
-
     <header>
-      <button type="submit" id="currentLocation">Use Current Location</button>
       <h1 id="location">City</h1>
       <p id="subtitle">Date</p>
     </header>
     <div class="information">
       ☀ <span class="number" id="temperature"></span>
       <span class="unit">°</span>
+      <div id="sub-information"></div>
     </div>
-    <div id="sub-information"></div>
     <h4>Next 5 days</h4>
-
     <ul class="emojis">
       <li>☀</li>
       <li>🌧</li>
@@ -46,7 +54,6 @@
       <li>⛈</li>
       <li>🌤</li>
     </ul>
-
     <ul class="temps">
       <li class="futureForecastNumber">14°</li>
       <li class="futureForecastNumber">13°</li>
@@ -54,7 +61,6 @@
       <li class="futureForecastNumber">11°</li>
       <li class="futureForecastNumber">14°</li>
     </ul>
-
     <hr />
     <h4><spam id="sub-sub-title">Today</spam></h4>
     <p class="bits">Feels like <spam id="feelsLike"></spam>°</p>
@@ -63,9 +69,10 @@
     <hr />
     <a href="#" id="celsius-units">Celcius </a>
     <br />
+    <br />
     <a href="#" id="fahrenheit-units">Fahrenheit </a>
     <h6>
-      <a href="https://github.com/rhiannongrant/Weather-App.git"
+      <a href="https://github.com/rhiannongrant/Weather-App.git" id="link"
         >Open-sourced</a
       >
       by Rhiannon Grant

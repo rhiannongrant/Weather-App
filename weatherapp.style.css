@@ -11,32 +11,38 @@ body {
 button {
   padding: 10px 20px;
   border-radius: 30px;
-  border-color: #5534a5;
-  background-color: #a85cf9;
-  color: #fff;
+  border-color: #f990f2;
+  background-color: #f6acf2;
+  border-style: double;
   margin-top: 10px;
+  font-size: 15px;
 }
+
+#search-form {
+  padding: 10px;
+}
+
 h1 {
   font-size: 45px;
-  color: #a85cf9;
+  color: #f6acf2;
 }
+
 #subtitle {
-  font-size: 35px;
-  color: #5534a5;
+  font-size: 40px;
+  color: #83ffff;
 }
 header {
   display: inline;
   text-align: center;
 }
 .information {
-  font-size: 50px;
+  font-size: 30px;
   color: #282020;
-  background-color: #e5d1f9;
-}
-.sub-information {
-  font-size: 45px;
-  color: #5b5454;
-  background-color: #e5d1f9;
+  background: linear-gradient(
+    68.6deg,
+    rgb(252, 165, 241) 1.8%,
+    rgb(181, 255, 255) 100.5%
+  );
 }
 h4 {
   text-align: left;
@@ -54,7 +60,7 @@ h6 {
   font-weight: 300;
   color: #5b5454;
   text-align: center;
-  padding-top: 50px;
+  padding-top: 20px;
 }
 
 ul.emojis li {
@@ -89,5 +95,23 @@ li {
 .bits {
   padding-left: 0px;
   font-size: 25px;
+  color: #5b5454;
+}
+
+#celsius-units,
+#fahrenheit-units {
+  padding: 8px 12px;
+  border-radius: 30px;
+  border-color: #f990f2;
+  background-color: #f6acf2;
+  border-style: double;
+  margin-top: 10px;
+  font-size: 15px;
+  text-decoration: none;
+  color: #5b5454;
+}
+
+#link {
+  text-decoration: none;
   color: #5b5454;
 }
