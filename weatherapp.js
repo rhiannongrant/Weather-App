@@ -38,10 +38,10 @@ if (minute < 10) {
   minute = `0${minute}`;
 }
 let sentence = `${day}, ${month} ${boop}, ${fullYear} at ${hour}:${minute}`;
-
 let subtitle = document.querySelector("p#subtitle");
-
 subtitle.innerHTML = sentence;
+
+document.querySelector("#sub-sub-title").innerHTML = `${day}`;
 
 //change units
 
