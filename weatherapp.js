@@ -95,6 +95,14 @@ function showWeather(response) {
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
   console.log(response);
+
+  let vibes = response.data.main.temp;
+
+  if (vibes > 21)
+    document.querySelector("#vibes").innerHTML = "Remember your SPF! ☀";
+
+  if (vibes < 21)
+    document.querySelector("#vibes").innerHTML = "You will need a jacket!";
 }
 
 function selectCity(event) {
