@@ -111,6 +111,8 @@ function showWeather(response) {
 
   if (vibes < 21)
     document.querySelector("#vibes").innerHTML = "You will need a jacket!";
+
+  displayFutureForecast();
 }
 
 function selectCity(event) {
@@ -142,3 +144,33 @@ function getCurrentLocation(event) {
 document
   .querySelector("#currentLocation")
   .addEventListener("click", getCurrentLocation);
+
+function displayFutureForecast() {
+  let forecastElement = document.querySelector("#future-forecast");
+
+  let days = ["Mon", "Tue", "Wed", "Thur", "Fri"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
