@@ -94,7 +94,15 @@ function showWeather(response) {
     response.data.main.feels_like;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
-  console.log(response);
+  document
+    .querySelector("#image")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+  document
+    .querySelector("#image")
+    .setAttribute("alt", response.data.weather[0].description);
 
   let vibes = response.data.main.temp;
 

@@ -24,12 +24,12 @@ button {
 
 h1 {
   font-size: 45px;
-  color: #f6acf2;
+  color: #282020;
 }
 
 #subtitle {
   font-size: 40px;
-  color: #83ffff;
+  color: #5b5454;
 }
 header {
   display: inline;
@@ -59,45 +59,28 @@ h4 {
   font-size: 20px;
   text-decoration: underline;
 }
-ul {
-  list-style-type: none;
+
+.future-forecast {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
   color: #5b5454;
 }
+
+#weather-forecast-temperatures-highest {
+  color: #000000;
+}
+
 h6 {
   font-family: "Courier New", Courier, monospace;
   font-weight: 300;
   color: #5b5454;
   text-align: center;
   padding-top: 20px;
-}
-
-ul.emojis li {
-  display: inline-block;
-  margin: 0px;
-  padding: 0px;
-  font-size: 30px;
-}
-
-ul.emojis {
-  width: 100%;
-  list-style: none;
-}
-
-ul.temps li {
-  display: inline-block;
-  margin: 0px;
-  padding: 0px;
-  font-size: 30px;
-}
-
-ul.temps {
-  width: 100%;
-  list-style: none;
-}
-
-li {
-  text-align: center;
-  width: 10%;
 }
 
 .bits {
