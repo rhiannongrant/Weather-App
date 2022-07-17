@@ -43,47 +43,48 @@ subtitle.innerHTML = sentence;
 
 document.querySelector("#sub-sub-title").innerHTML = `${day}`;
 
-//change units
+// change forecast
 
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheit = document.querySelector(".unit");
-  fahrenheit.innerHTML = `°F`;
+function displayFutureForecast(response) {
+  console.log(response.data.daily);
+  let forecastElement = document.querySelector("#future-forecast");
+
+  let days = ["Mon", "Tue", "Wed", "Thur", "Fri"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+      </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
-let fahrenheitUnit = document.querySelector("#fahrenheit-units");
-fahrenheitUnit.addEventListener("click", convertToFahrenheit);
 
-function unitToF(event) {
-  event.preventDefault();
-  let actualNumber = document.querySelector("#temperature");
-  let unit = actualNumber.innerHTML;
-  unit = Number(unit);
-  actualNumber.innerHTML = Math.round((unit * 9) / 5 + 32);
+function changeFutureForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = `5d6ccea11b20e8de9615fa5ff7430272`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayFutureForecast);
 }
-let fahrenheitBits = document.querySelector("#fahrenheit-units");
-fahrenheitBits.addEventListener("click", unitToF);
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let celsius = document.querySelector(".unit");
-  celsius.innerHTML = `°C`;
-}
-let celsiusUnit = document.querySelector("#celsius-units");
-celsiusUnit.addEventListener("click", convertToCelsius);
-
-function unitToC(event) {
-  event.preventDefault();
-  let actualNumber = document.querySelector("#temperature");
-  let unit = actualNumber.innerHTML;
-  unit = Number(unit);
-  actualNumber.innerHTML = Math.round(((unit - 32) * 5) / 9);
-}
-let celsiusBits = document.querySelector("#celsius-units");
-celsiusBits.addEventListener("click", unitToC);
-
-// change temperature
 
 function showWeather(response) {
+  console.log(response);
   document.querySelector("#sub-information").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -112,7 +113,7 @@ function showWeather(response) {
   if (vibes < 21)
     document.querySelector("#vibes").innerHTML = "You will need a jacket!";
 
-  displayFutureForecast();
+  changeFutureForecast(response.data.coord);
 }
 
 function selectCity(event) {
@@ -145,32 +146,42 @@ document
   .querySelector("#currentLocation")
   .addEventListener("click", getCurrentLocation);
 
-function displayFutureForecast() {
-  let forecastElement = document.querySelector("#future-forecast");
+//change units
 
-  let days = ["Mon", "Tue", "Wed", "Thur", "Fri"];
-
-  let forecastHTML = `<div class="row">`;
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <div class="col-2">
-        <div class="weather-forecast-date">${day}</div>
-        <img
-          src="http://openweathermap.org/img/wn/50d@2x.png"
-          alt=""
-          width="42"
-        />
-        <div class="weather-forecast-temperatures">
-          <span class="weather-forecast-temperature-max"> 18° </span>
-          <span class="weather-forecast-temperature-min"> 12° </span>
-        </div>
-      </div>
-  `;
-  });
-
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-  console.log(forecastHTML);
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheit = document.querySelector(".unit");
+  fahrenheit.innerHTML = `°F`;
 }
+let fahrenheitUnit = document.querySelector("#fahrenheit-units");
+fahrenheitUnit.addEventListener("click", convertToFahrenheit);
+
+function unitToF(event) {
+  event.preventDefault();
+  let actualNumber = document.querySelector("#temperature");
+  let unit = actualNumber.innerHTML;
+  unit = Number(unit);
+  actualNumber.innerHTML = Math.round((unit * 9) / 5 + 32);
+}
+let fahrenheitBits = document.querySelector("#fahrenheit-units");
+fahrenheitBits.addEventListener("click", unitToF);
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let celsius = document.querySelector(".unit");
+  celsius.innerHTML = `°C`;
+}
+
+let celsiusUnit = document.querySelector("#celsius-units");
+celsiusUnit.addEventListener("click", convertToCelsius);
+
+function unitToC(event) {
+  event.preventDefault();
+  let actualNumber = document.querySelector("#temperature");
+  let unit = actualNumber.innerHTML;
+  unit = Number(unit);
+  actualNumber.innerHTML = Math.round(((unit - 32) * 5) / 9);
+}
+
+let celsiusBits = document.querySelector("#celsius-units");
+celsiusBits.addEventListener("click", unitToC);
