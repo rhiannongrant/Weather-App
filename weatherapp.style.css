@@ -1,10 +1,11 @@
 body {
   border: solid;
+  box-shadow: 5px 5px 5px 5px lightgrey;
   border-color: grey;
   margin-top: 10px;
   margin-left: 300px;
   margin-right: 300px;
-  margin-bottom: 300px;
+  margin-bottom: 500px;
   border-radius: 30px;
   text-align: center;
 }
@@ -12,6 +13,7 @@ button {
   padding: 10px 20px;
   border-radius: 30px;
   border-color: #f990f2;
+  box-shadow: 2px 2px 2px 2px #ffddfc;
   background-color: #f6acf2;
   border-style: double;
   margin-top: 10px;
@@ -49,20 +51,21 @@ header {
 }
 
 #vibes {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 h4 {
   text-align: left;
   margin-left: 10px;
   margin-top: 30px;
-  font-size: 20px;
+  font-size: 15px;
   color: #5b5454;
 }
 
 #future-forecast {
   margin-top: 20px;
   text-align: center;
+  margin-left: 80px;
   font-size: 16px;
 }
 
@@ -85,7 +88,7 @@ h6 {
 
 .bits {
   padding-left: 0px;
-  font-size: 25px;
+  font-size: 20px;
   color: #5b5454;
 }
 
@@ -95,6 +98,7 @@ h6 {
   border-radius: 30px;
   border-color: #f990f2;
   background-color: #f6acf2;
+  box-shadow: 2px 2px 2px 2px #ffddfc;
   border-style: double;
   margin-top: 10px;
   font-size: 15px;
