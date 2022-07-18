@@ -171,6 +171,7 @@ function convertToFahrenheit(event) {
   event.preventDefault();
   let fahrenheit = document.querySelector(".unit");
   fahrenheit.innerHTML = `°F`;
+  fahrenheitUnit.removeEventListener("click", convertToFahrenheit);
 }
 let fahrenheitUnit = document.querySelector("#fahrenheit-units");
 fahrenheitUnit.addEventListener("click", convertToFahrenheit);
@@ -181,6 +182,7 @@ function unitToF(event) {
   let unit = actualNumber.innerHTML;
   unit = Number(unit);
   actualNumber.innerHTML = Math.round((unit * 9) / 5 + 32);
+  fahrenheitBits.removeEventListener("click", unitToF);
 }
 let fahrenheitBits = document.querySelector("#fahrenheit-units");
 fahrenheitBits.addEventListener("click", unitToF);
@@ -189,6 +191,7 @@ function convertToCelsius(event) {
   event.preventDefault();
   let celsius = document.querySelector(".unit");
   celsius.innerHTML = `°C`;
+  celsiusUnit.removeEventListener("click", convertToCelsius);
 }
 
 let celsiusUnit = document.querySelector("#celsius-units");
@@ -200,6 +203,7 @@ function unitToC(event) {
   let unit = actualNumber.innerHTML;
   unit = Number(unit);
   actualNumber.innerHTML = Math.round(((unit - 32) * 5) / 9);
+  celsiusBits.removeEventListener("click", unitToC);
 }
 
 let celsiusBits = document.querySelector("#celsius-units");
