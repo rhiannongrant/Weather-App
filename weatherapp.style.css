@@ -35,7 +35,7 @@ header {
   display: inline;
   text-align: center;
 }
-.information {
+#information {
   font-size: 30px;
   color: #282020;
   background: linear-gradient(
