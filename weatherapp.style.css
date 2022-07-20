@@ -2,10 +2,10 @@ body {
   border: solid;
   box-shadow: 5px 5px 5px 5px lightgrey;
   border-color: grey;
-  margin-top: 10px;
-  margin-left: 300px;
-  margin-right: 300px;
-  margin-bottom: 500px;
+  margin-top: 1%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 30%;
   border-radius: 30px;
   text-align: center;
 }
